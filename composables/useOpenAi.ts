@@ -109,6 +109,43 @@ export const getWikiPage = async (topic: string, language: string): Promise<Arti
     }
 }
 
+export const getRandomTopics = async (count: number, language: string): Promise<string[]> => {
+    const { openAiSecret } = useRuntimeConfig().public;
+
+    const client = new OpenAI({
+        apiKey: openAiSecret,
+        dangerouslyAllowBrowser: true,
+    });
+
+    const response = await client.responses.create({
+        model: "gpt-4.1",
+        input: [
+            {"role": "user", "content": getLocalizedRandomTitlesPrompt(count, language)}
+        ],
+        text: {
+            format: {
+                type: "json_schema",
+                name: "wiki_page",
+                schema: {
+                    type: "object",
+                    properties: {
+                        topics: {
+                            type: "array",
+                            items: {
+                                type: "string"
+                            }
+                        },
+                    },
+                    required: ["topics"],
+                    additionalProperties: false,
+                },
+            }
+        }
+    });
+
+    return JSON.parse(response.output_text).topics;
+}
+
 const getLocalizedSystemPrompt = (language: string) => {
     if (language === 'pl') {
         return 'Generujesz fałszywą stronę wiki z tytułem, treścią podzieloną na sekcje i listą 10 powiązanych tematów. To jest dla zabawy, więc generuj losowe nieprawdziwe artykuły. Wszystkie artykuły muszą być powiązane z przeszłością lub teraźniejszością. Podziel treść na sekcje z tytułami. Każda treść sekcji musi mieć co najmniej 8 zdań.';
@@ -130,6 +167,14 @@ const getLocalizedRandomTitlePrompt = (language: string) => {
     }
 
     return 'Write a title for a random wiki page. It can be silly and unreal, make it funny.';
+}
+
+const getLocalizedRandomTitlesPrompt = (count: number, language: string) => {
+    if (language === 'pl') {
+        return `Napisz ${count} tytułów dla losowej strony wiki. Może być głupi, nierealny i zabawny.`;
+    }
+
+    return `Write ${count} titles for a random wiki page. It can be silly and unreal, make it funny.`;
 }
 
 export const getDummyData = (): Article => {

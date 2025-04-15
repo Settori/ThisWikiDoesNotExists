@@ -27,7 +27,7 @@ defineProps<{
               :key="`simmilarTopic${index}`"
               class="mx-4"
           >
-            <NuxtLink :to="localePath(`/wiki/${topic}`)" class="text-blue-700 font-sans italic">{{ topic }}</NuxtLink>
+            <NuxtLink :to="localePath(`/wiki/${encodeURIComponent(topic)}`)" class="text-blue-700 font-sans italic">{{ topic }}</NuxtLink>
           </li>
         </ul>
       </div>
