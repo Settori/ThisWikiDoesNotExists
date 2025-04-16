@@ -10,6 +10,6 @@ await navigateTo(`/wiki/${topic}`)
 </script>
 <template>
   <NuxtLayout>
-    Please wait
+    <Spinner class="w-full flex items-center justify-center my-10"/>
   </NuxtLayout>
 </template>

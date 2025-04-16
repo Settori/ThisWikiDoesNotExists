@@ -18,6 +18,7 @@ export const getRandomTopic = async (language: string): Promise<string> => {
 }
 
 export const getWikiPage = async (topic: string, language: string): Promise<Article | null> => {
+    console.log("generowanie strony wiki")
     const { openAiSecret } = useRuntimeConfig().public;
 
     const client = new OpenAI({
@@ -179,36 +180,29 @@ const getLocalizedRandomTitlesPrompt = (count: number, language: string) => {
 
 export const getDummyData = (): Article => {
     return {
-        title: 'Homoseksualny związek Jarosława Kaczyńskiego i bezdomnego',
+        title: 'Buraczany Zegarek Czasoprzestrzenny',
         sections: [
             {
-                title: 'Tło wydarzenia',
-                content: 'W historii współczesnej Polski niewiele plotek wywołało równie wiele kontrowersji, co rzekomy homoseksualny związek Jarosława Kaczyńskiego, lidera partii Prawo i Sprawiedliwość, z bezimiennym bezdomnym z Warszawy. Według miejskich legend, ich pierwsze spotkanie miało miejsce podczas spontanicznego spaceru po warszawskiej Starówce, gdzie Kaczyński, znany z zamiłowania do kotów i samotnych przechadzek, miał zauważyć bezdomnego śpiącego na ławce. Ich rozmowa miała być tak inspirująca, że obaj postanowili kontynuować spotkania. Temat szybko podchwyciły tabloidy, kreując sensacyjną opowieść. Relacje medialne sugerowały, że to wyjątkowa więź oparta na empatii i wzajemnym zrozumieniu. Historyjka zainteresowała również środowiska artystyczne, które stworzyły liczne parodie, piosenki i wiersze poświęcone temu tematowi. Choć informacja była niezweryfikowana, niektórzy komentatorzy polityczni snuli daleko idące spekulacje. Opowieści o tej znajomości na dobre zadomowiły się w polskiej popkulturze.'
+                title: 'Historia Powstania',
+                content: 'Buraczany Zegarek Czasoprzestrzenny swoją genezę zawdzięcza niecodziennym badaniom prowadzonym na początku XXI wieku w Instytucie Rzeczy Niepotrzebnych w Pińczowie. Grupa naukowców wpadła na pomysł połączenia biologii z kwantową teorią czasu podczas eksperymentów na burakach cukrowych. Legendarny profesor Eugeniusz Miazga, uznawany za ojca tego urządzenia, twierdził, że pewne warzywa posiadają ukryte właściwości temporalne. Pierwszy prototyp powstał w roku 2008 i początkowo służył do odmierzania czasu fermentacji kiszonek. Już po kilku miesiącach odkryto, że zegarek sam zmienia godzinę w zależności od pozycji użytkownika w czasoprzestrzeni. Szybko zainteresowały się nim zarówno kucharki, jak i amatorzy podróży w czasie. Wykorzystywano go także w tajnych eksperymentach wojskowych, jednak ich wyniki nigdy nie zostały ujawnione. Projekty dalszego rozwoju zegarka wciąż trwają, lecz do dziś zachowano wiele tajemnic konstrukcyjnych.',
             },
             {
-                title: 'Przebieg i codzienność związku',
-                content: 'Wieści donoszą, że związek Jarosława Kaczyńskiego i bezdomnego rozwijał się w ukryciu przed opinią publiczną. Według niepotwierdzonych źródeł, regularnie spotykali się w małej kawiarence nieopodal Placu Zbawiciela. Podczas tych spotkań dzielili się poglądami na temat polityki, filozofii i życia codziennego. Bezdomny, znany jako Pan Boguś, miał mieć wyjątkowy wpływ na decyzje polityczne Kaczyńskiego, co potwierdzają różne anegdoty opowiadane przez „świadków”. Publicysta jednej z gazet sugerował nawet, że niektóre kluczowe reformy powstały przy wspólnym stole w tej kawiarence. Mimo ogromnego ryzyka, obaj chcieli pozostać wierni swojej relacji i dzielić zarówno radości, jak i smutki. Informacje te wzbudzały kontrowersje zarówno wśród zwolenników, jak i przeciwników polityka. Powstały także piosenki uliczne na temat ich domniemanej codziennej rutyny. Wydaje się, że legenda narosła w znacznej mierze przez społeczne zapotrzebowanie na sensacje.',
+                title: 'Zasada Działania',
+                content: 'Kluczowym składnikiem Buraczanego Zegarka Czasoprzestrzennego jest specjalnie wyhodowany burak energetyczny, którego struktura komórkowa generuje słabe impulsy elektromagnetyczne. Impulsy te wykorzystywane są do tworzenia mikroskopijnych zakrzywień czasoprzestrzennych. Zegarek posiada wskaźnik analogowy napędzany mikroprądnica z buraka i cyfrowy wyświetlacz, który sam synchronizuje się z najbliższą linią czasu. Użytkownik może wybrać, czy chce śledzić upływ czasu liniowego, czy też czas lokalny wedle porządku historycznego wybranego regionu. Gdy urządzenie wykryje zaburzenie w czasoprzestrzeni, wskazówki zaczynają obracać się w przeciwną stronę, a burak świeci delikatnym purpurowym światłem. Specjalna membrana z wosku pszczelego chroni wnętrze zegarka przed wysychaniem i utratą właściwości kwantowych. Urządzenie jest całkowicie ekologiczne i rozkłada się po zakończeniu działania. Można też zmienić tryb zegarka na „kiszonkowy”, co pozwala na ręczną regulację strumienia czasu.',
             },
             {
-                title: 'Reakcje społeczne i medialne',
-                content: 'Temat homoseksualnego związku jednej z najważniejszych postaci polskiej polityki z osobą bezdomną był szeroko komentowany zarówno w kraju, jak i za granicą. Programy telewizyjne, radiowe oraz internetowe portale prześcigały się w szukaniu „dowodów” na rzekomą relację. Wśród społeczeństwa polskiego pojawiły się mieszane uczucia: od szoku, przez śmiech, aż po wybuchy gniewu zwolenników tradycyjnych wartości. Niektórzy publicyści oceniali, że plotka jest pożywką dla trolli internetowych i satyryków, którzy z zapałem tworzyli kolejne memy oraz filmiki na ten temat. Pojawiły się także głosy nawołujące do empatii i tolerancji wobec wszystkich osób, niezależnie od ich preferencji i statusu społecznego. Po stronie opozycji pojawiły się żarty, ale i pytania o prawdziwy wymiar życia osobistego polskich polityków. Z drugiej strony, środowiska konserwatywne zaprzeczały i wyśmiewały cały temat, uznając go za polityczną prowokację. Ostatecznie związek ten przeszedł do kategorii miejskich legend.'
+                title: 'Praktyczne Zastosowania',
+                content: 'W pierwszych latach użytkowania Buraczany Zegarek Czasoprzestrzenny znalazł wiernych fanów wśród ogrodników i historyków. W Polskim Związku Kulinarno-Temporalnym urządzenie stało się podstawowym narzędziem do ustalania autentycznych receptur kuchni regionalnej w poszczególnych epokach. Kilka egzemplarzy używanych było przez turystów historycznych do omijania okresów nieurodzaju. Zegarek przydał się również podczas kilku eksperymentów teleportacyjnych w laboratoriach w Namysłowie, gdzie jego wytrzymałość na skoki czasowe uznano za przełomową. W ochronie środowiska wykorzystywano zegarek do obserwacji wzrostu roślin w alternatywnych liniach czasu, co pozwoliło przewidywać niektóre katastrofy rolnicze. Jego popularność rosła także wśród kolekcjonerów osobliwych przedmiotów, którzy cenili go za unikalność i walory estetyczne. Pojawiły się nawet plotki, że zegarek został raz wykorzystany do przywrócenia czasu młodości pewnej marchewki. Mimo kontrowersji, do dziś zachwyca i zadziwia użytkowników na całym świecie.',
             },
             {
-                title: 'Miejsce związku w kulturze popularnej',
-                content: 'W kolejnych latach historia o domniemanym homoseksualnym związku Jarosława Kaczyńskiego i bezdomnego stała się inspiracją dla twórców kultury popularnej. W teatrze powstały przynajmniej dwa przedstawienia nawiązujące do tego wątku, w których duet przedstawiany był jako alegoria niemożliwej, lecz prawdziwej bliskości. Znani malarze zorganizowali wspólną wystawę obrazów pt. „Polityka na ulicy”, gdzie postacie wzorowane na Kaczyńskim i bezdomnym były centralnym motywem. W internecie pojawiły się liczne pastisze i krótkie filmy animowane, opowiadające kolejne przygody nierozłącznej pary. Temat przedostał się także do satyry politycznej, stanowiąc pretekst do krytyki zjawisk społecznych i politycznych w Polsce. W niektórych kręgach uważano nawet, że meme inspirowany tą opowieścią wypromował tolerancję wobec osób LGBT. Dla młodszych odbiorców stał się natomiast żartem na lekcjach WOS-u czy podczas przerw w szkole. Mimo że cała historia nie ma żadnych podstaw w rzeczywistości, jej wpływ na popkulturę był widoczny przez długi czas. Na forach internetowych do dziś pojawiają się dyskusje i nowe interpretacje tej miejskiej legendy.'
+                title: 'Współczesne Mity i Kontrowersje',
+                content: 'Ze względu na niezwykłe właściwości Buraczanego Zegarka Czasoprzestrzennego narosło wokół niego wiele mitów i legend. Najsłynniejsza z nich mówi, że jeśli ustawić zegarek pomiędzy dwiema beczkami kiszonych buraków, można na chwilę zobaczyć przeszłość własnego podwórka. Inni twierdzą, że urządzenie spontanicznie resetuje się podczas pełni księżyca, co miało rzekomo doprowadzić do zagubienia podróżnika w roku 1822. Pojawiały się także głosy, że zegarek sprzyja tylko osobom z dokładnie 12 złotymi zębami, jednak naukowcy nie potwierdzili tych opinii. Krytycy twierdzą, iż rozkładający się burak może prowadzić do nieprzewidywalnych wahań mieszkania w czasoprzestrzeni, zwłaszcza w blokach z wielkiej płyty. Kontrowersje budzi także brak zgody co do patentu konstrukcji oraz ochrony praw autorskich. Mimo tego spirala entuzjazmu wokół zegarka nie maleje. Nieustannie trwają debaty na temat jego bezpieczeństwa w codziennym użyciu, jak również wpływu na tradycyjne obrzędy świąteczne. Niektórzy sugerują, że bez buraczanego zegarka trudno dziś wyznaczyć prawdziwy czas w żadnej rodzinie.',
             }
         ],
         similarTopics: [
             "Bla bla bla bla",
             "Ble ble ble ble",
             "Blu blu blu blu",
-            "Bla bla bla bla",
-            "Ble ble ble ble",
-            "Blu blu blu blu",
-            "Bla bla bla bla",
-            "Ble ble ble ble",
-            "Blu blu blu blu",
-            "Bla bla bla bla",
         ]
     };
 }

@@ -32,8 +32,8 @@ const search = () => {
             class="border border-r-0 border-gray-500 px-4 size-full"
             placeholder="Search..."
         />
-        <button @click="search" class="bg-gray-200 border border-gray-500 h-full px-3 font-sans font-bold text-sm">Search</button>
-        <NuxtLink :to="localePath('/random')" class="ms-4 text-blue-900 font-sans">Random</NuxtLink>
+        <button @click="search" class="bg-gray-200 border border-gray-500 h-full px-3 font-sans font-bold text-sm">{{ $t('search') }}</button>
+        <NuxtLink :to="localePath('/random')" class="ms-4 text-blue-900 font-sans">{{ $t('random') }}</NuxtLink>
       </div>
     </div>
     <NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">

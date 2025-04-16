@@ -24,8 +24,8 @@ export default defineNuxtConfig({
   ],
   i18n: {
     locales: [
-      { code: 'en', language: 'en-US' },
-      { code: 'pl', language: 'pl-PL' }
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'pl', name: 'Polish', file: 'pl.json' },
     ],
     defaultLocale: 'en',
   },

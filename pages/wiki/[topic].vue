@@ -6,10 +6,14 @@ const {locale} = useI18n();
 const currentLanguage = locale.value;
 
 const route = useRoute();
-const result = ref(await getWikiPage(Array.isArray(route.params.topic) ? route.params.topic[0] : route.params.topic, currentLanguage));
+const result = ref<Article | null>(null);
+onMounted(async () => {
+  result.value = await getWikiPage(Array.isArray(route.params.topic) ? route.params.topic[0] : route.params.topic, currentLanguage)
+})
 </script>
 <template>
   <NuxtLayout>
     <Article v-if="result" :article="result" />
+    <Spinner v-else class="w-full flex items-center justify-center my-10"/>
   </NuxtLayout>
 </template>
